@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang = "id">
+<head>
+    <meta charset = "UTF-8">
+    <title>Hoodebourhead Purchase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="kategori">
+        <div class="content">
+            <h2>Choose the Best Store</h2>
+            <p>Only the Best Sweaters and Hoodies for You!</p>
+        </div>
+        <div class="image">
+            <img src="listharga.png">
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3>Your Order Detail</h3>
+            <p>Complete your order detail below</p>
+            <div class="menu" id="menu">
+                <div class="inputbox">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="inputbox">
+                    <input type="text" placeholder="Address">
+                </div>
+                <div class="dropdown">
+                    <input type="text" id="type" class="text02" readonly
+                    placeholder="Type">
+                    <div class="option">
+                        <div onmouseover="show('Sweater', '#type')">Sweater</div>
+                        <div onmouseover="show('Hoodie', '#type')">Hoodie</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <input type="text" id="size" class="text02" readonly
+                    placeholder="Size">
+                    <div class="option">
+                        <div onmouseover="show('S', '#size')">S</div>
+                        <div onmouseover="show('M', '#size')">M</div>
+                        <div onmouseover="show('L', '#size')">L</div>
+                        <div onmouseover="show('XL', '#size')">XL</div>
+                        <div onmouseover="show('XXL', '#size')">XXL</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <input type="text" id="color" class="text02" readonly
+                    placeholder="Color">
+                    <div class="option">
+                        <div onmouseover="show('Black', '#color')">Black</div>
+                        <div onmouseover="show('White', '#color')">White</div>
+                        <div onmouseover="show('Grey', '#color')">Grey</div>
+                        <div onmouseover="show('Army', '#color')">Army</div>
+                        <div onmouseover="show('Navy', '#color')">Navy</div>
+                        <div onmouseover="show('Mustard', '#color')">Mustard</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <input type="text" id="print" class="text02" readonly
+                    placeholder="Printing Style">
+                    <div class="option">
+                        <div onmouseover="show('Front-only', '#print')">Front only</div>
+                        <div onmouseover="show('Back-only', '#print')">Back only</div>
+                        <div onmouseover="show('Front and Back', '#print')">Front and Back</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <input type="text" id="payment" class="text02" readonly
+                    placeholder="Payment Method">
+                    <div class="option">
+                        <div onmouseover="show('DANA', '#payment')">DANA</div>
+                        <div onmouseover="show('ShopeePay', '#payment')">ShopeePay</div>
+                        <div onmouseover="show('GoPay', '#payment')">GoPay</div>
+                    </div>
+                </div>
+            </div>
+            <div class="upload">
+                <label for="upload">Upload the Payment</label>
+                <input type="file" id="upload" accept="image/*" hidden>
+                <button class="select">Select Image</button>
+            </div>
+            <button class="confirm">Confirm Order</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        function show(a, idTarget){
+            document.querySelector(idTarget).value = a; 
+        }
+
+        let dropdown = document.querySelectorAll('.dropdown').forEach(dropdown=>{
+            dropdown.onclick = function(){
+                dropdown.classList.toggle('active');
+            };
+        });
+    </script>
+</body>
+</html>
